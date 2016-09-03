@@ -1,8 +1,8 @@
-if [-f ~/.bashrc]; then
+if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
 
-export PS1="\W\$"
+export PS1="\W\$ "
 export HISTSIZE=10000
 export EDITOR=vim
 
