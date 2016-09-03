@@ -1,0 +1,15 @@
+set hintchars=daoeuisnth
+
+map <C-h> <C-PageUp>
+map <C-l> <C-PageDown>
+map H <Left>
+map L <Right>
+map h <A-Left>
+map l <A-Right>
+noremap j 8<C-e>
+noremap k 8<C-y>
+
+nmap S <C-c>:tabopen<Space>google<Space><C-v><CR>
+vmap S <C-c><Esc><Esc>:tabopen<Space>google<Space><C-v><CR>
+
+echo "vimperatorrc loaded"
