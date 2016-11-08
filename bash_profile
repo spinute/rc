@@ -9,4 +9,4 @@ export EDITOR=vim
 export GOROOT="$HOME/go"
 export GOPATH="$HOME/packages"
 
-export PATH="$PATH:$GOROOT/bin"
+export PATH="$PATH:$GOROOT/bin:/usr/local/cuda/bin"
