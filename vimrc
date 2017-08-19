@@ -1,5 +1,6 @@
 set nocompatible
 
+" curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh > install.sh && ./install.sh
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
