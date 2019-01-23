@@ -13,20 +13,25 @@ call plug#begin('~/.vim/plugged')
   Plug 'SirVer/ultisnips'
   Plug 'Valloric/YouCompleteMe'
 
-  " erlang
+  " Erlang
   Plug 'vim-erlang/vim-erlang-omnicomplete'
   Plug 'vim-erlang/vim-erlang-runtime'
   Plug 'vim-erlang/vim-erlang-tags'
   Plug 'spinute/vim-erlang-compiler'
-  " go
+  " Golang
   Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries' }
   Plug 'mdempsky/gocode', {'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
-  " ruby
+  " c
+  Plug 'vim-scripts/a.vim'
+  Plug 'vim-scripts/Conque-GDB'
+  " Ruby
   Plug 'tpope/vim-endwise'
-  " html/css
+  " HTML/CSS
   Plug 'mattn/emmet-vim'
-  " rust
+  " Rust
   Plug 'rust-lang/rust.vim'
+  " Elixir
+  Plug 'elixir-editors/vim-elixir'
 call plug#end()
 
 colorscheme jellybeans
@@ -93,3 +98,4 @@ set expandtab
 set listchars=eol:¬,tab:▸▸
 set clipboard=unnamedplus,unnamed
 set spelllang=en,cjk
+set completeopt=menu,preview
