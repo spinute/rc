@@ -59,9 +59,9 @@ noremap <C-l> <C-W>l
 
 let g:go_fmt_command = "goimports"
 
-let g:UltiSnipsExpandTrigger="<Space>"
-let g:UltiSnipsJumpForwardTrigger="<c-f>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+let g:UltiSnipsExpandTrigger="<c-x>"
+let g:UltiSnipsJumpForwardTrigger="<c-l>"
+let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 
 nnoremap <space> <C-f>
 nnoremap <ESC><ESC> :nohlsearch<CR>
