@@ -10,6 +10,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-fugitive'
   Plug 'vim-scripts/AnsiEsc.vim'
   Plug 'thinca/vim-quickrun'
+  Plug 'SirVer/ultisnips'
+  Plug 'Valloric/YouCompleteMe'
 
   " erlang
   Plug 'vim-erlang/vim-erlang-omnicomplete'
@@ -42,10 +44,32 @@ inoremap <C-e> <End>
 inoremap <C-m> <Cr>
 inoremap <C-o> <C-x><C-o>
 
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+
+noremap <C-j> <C-W>j
+noremap <C-k> <C-W>k
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
+
+let g:go_fmt_command = "goimports"
+
+let g:UltiSnipsExpandTrigger="<Space>"
+let g:UltiSnipsJumpForwardTrigger="<c-f>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+
+nnoremap <space> <C-f>
 nnoremap <ESC><ESC> :nohlsearch<CR>
-nnoremap gc :FixWhitespace
+nnoremap gs :w<CR>
+nnoremap gc :GoMetaLinter<CR>
+nnoremap gf :FixWhitespace<CR>
 nnoremap gi :GoImports<CR>
 nnoremap gr :QuickRun<CR>
+
+nnoremap gd :GoDebugStart<CR>
+nnoremap gu :GoDebugStepout<CR>
+
+iab xdate <c-r>=strftime("%y-%m-%d %H:%M:%S")<cr>
 
 let g:deoplete#enable_at_startup = 1
 
@@ -53,11 +77,13 @@ autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 let g:rustfmt_autosave = 1
 
+set history=10000
 set hlsearch incsearch
 set ignorecase smartcase
 set cursorline cursorcolumn
 set ruler number list hidden
-set autoindent
+set autoindent smartindent
+set autowrite
 set lazyredraw
 set wildmenu wildmode=list:full
 set showcmd showmatch
