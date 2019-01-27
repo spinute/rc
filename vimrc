@@ -11,7 +11,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-scripts/AnsiEsc.vim'
   Plug 'thinca/vim-quickrun'
   Plug 'SirVer/ultisnips'
-  Plug 'Valloric/YouCompleteMe'
 
   " Erlang
   Plug 'vim-erlang/vim-erlang-omnicomplete'
@@ -59,7 +58,7 @@ noremap <C-l> <C-W>l
 
 let g:go_fmt_command = "goimports"
 
-let g:UltiSnipsExpandTrigger="<c-x>"
+let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
 let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 
