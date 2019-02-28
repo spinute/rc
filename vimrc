@@ -12,6 +12,11 @@ call plug#begin('~/.vim/plugged')
   Plug 'thinca/vim-quickrun'
   Plug 'SirVer/ultisnips'
 
+  " C
+  Plug 'vim-scripts/a.vim'
+  Plug 'vim-scripts/Conque-GDB'
+  " Elixir
+  Plug 'elixir-editors/vim-elixir'
   " Erlang
   Plug 'vim-erlang/vim-erlang-omnicomplete'
   Plug 'vim-erlang/vim-erlang-runtime'
@@ -20,17 +25,14 @@ call plug#begin('~/.vim/plugged')
   " Golang
   Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries' }
   Plug 'mdempsky/gocode', {'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
-  " c
-  Plug 'vim-scripts/a.vim'
-  Plug 'vim-scripts/Conque-GDB'
-  " Ruby
-  Plug 'tpope/vim-endwise'
   " HTML/CSS
   Plug 'mattn/emmet-vim'
+  " Ruby
+  Plug 'tpope/vim-endwise'
+  Plug 'tpope/vim-rails'
+  Plug 'ruby-formatter/rufo-vim'
   " Rust
   Plug 'rust-lang/rust.vim'
-  " Elixir
-  Plug 'elixir-editors/vim-elixir'
 call plug#end()
 
 colorscheme jellybeans
@@ -46,40 +48,35 @@ inoremap <C-d> <Del>
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
 inoremap <C-m> <Cr>
-inoremap <C-o> <C-x><C-o>
-
+cnoremap <C-h> <Backspace>
+cnoremap <C-d> <Del>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
-
-noremap <C-j> <C-W>j
-noremap <C-k> <C-W>k
-noremap <C-h> <C-W>h
-noremap <C-l> <C-W>l
+cnoremap <C-m> <Cr>
 
 let g:go_fmt_command = "goimports"
-
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
 let g:UltiSnipsJumpBackwardTrigger="<c-h>"
+let g:deoplete#enable_at_startup = 1
+let g:rufo_auto_formatting = 1
+let g:rustfmt_autosave = 1
 
 nnoremap <space> <C-f>
 nnoremap <ESC><ESC> :nohlsearch<CR>
-nnoremap gs :w<CR>
 nnoremap gc :GoMetaLinter<CR>
-nnoremap gf :FixWhitespace<CR>
 nnoremap gi :GoImports<CR>
+nnoremap gt :GoTest<CR>
 nnoremap gr :QuickRun<CR>
 
 nnoremap gd :GoDebugStart<CR>
 nnoremap gu :GoDebugStepout<CR>
 
-iab xdate <c-r>=strftime("%y-%m-%d %H:%M:%S")<cr>
-
-let g:deoplete#enable_at_startup = 1
-
-autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
-
-let g:rustfmt_autosave = 1
+autocmd Filetype ruby setlocal softtabstop=2 sw=2 ts=2
+autocmd Filetype html setlocal softtabstop=2 sw=2 ts=2
+autocmd Filetype scss setlocal softtabstop=2 sw=2 ts=2
+autocmd Filetype yaml setlocal softtabstop=2 sw=2 ts=2
+autocmd BufRead,BufNewFile Gemfile setlocal filetype=ruby
 
 set history=10000
 set hlsearch incsearch
