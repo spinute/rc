@@ -1,7 +1,8 @@
 alias l=ls
 alias la='ls -a'
 alias ll='ls -l'
-alias valg='valgrind --show-leak-kinds=all --track-origins=yes --dsymutil=yes'
+alias v=vim
+alias g=git
 
 source ~/.git-completion.bash
 
@@ -12,5 +13,7 @@ export TERM=screen-256color
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$HOME/.cargo/bin
+export PATH=$PATH:$HOME/repos/flutter/bin
 
-export PATH=$PATH:/usr/local/cuda/bin"
+eval "$(direnv hook bash)"
