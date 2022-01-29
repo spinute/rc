@@ -2,8 +2,6 @@ set nocompatible
 
 " Install plug: curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin('~/.vim/plugged')
-  " Install pynvim: pip3 install --user pynvim
-  Plug 'Shougo/deoplete.nvim' | Plug 'roxma/nvim-yarp' | Plug 'roxma/vim-hug-neovim-rpc'
   Plug 'bronson/vim-trailing-whitespace'
   Plug 'scrooloose/nerdtree'
   Plug 'nanotech/jellybeans.vim'
@@ -11,10 +9,16 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-scripts/AnsiEsc.vim'
   Plug 'thinca/vim-quickrun'
   Plug 'SirVer/ultisnips'
+  Plug 'zxqfl/tabnine-vim'
+  Plug 'szw/vim-tags'
+  Plug 'rizzatti/dash.vim'
 
+  " Vim
+  Plug 'honza/vim-snippets'
+  " Fish
+  Plug 'dag/vim-fish'
   " C
   Plug 'vim-scripts/a.vim'
-  Plug 'vim-scripts/Conque-GDB'
   " Elixir
   Plug 'elixir-editors/vim-elixir'
   " Erlang
@@ -27,10 +31,14 @@ call plug#begin('~/.vim/plugged')
   Plug 'mdempsky/gocode', {'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
   " HTML/CSS
   Plug 'mattn/emmet-vim'
+  " JS
+  Plug 'pangloss/vim-javascript'
+  Plug 'maxmellon/vim-jsx-pretty'
   " Ruby
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-rails'
-  Plug 'ruby-formatter/rufo-vim'
+  Plug 'thoughtbot/vim-rspec'
+  Plug 'slim-template/vim-slim'
   " Rust
   Plug 'rust-lang/rust.vim'
 call plug#end()
@@ -55,11 +63,13 @@ cnoremap <C-e> <End>
 cnoremap <C-m> <Cr>
 
 let g:go_fmt_command = "goimports"
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<Tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
 let g:UltiSnipsJumpBackwardTrigger="<c-h>"
+let g:UltiSnipsEditSplit="vertical"
 let g:deoplete#enable_at_startup = 1
 let g:rufo_auto_formatting = 1
+let g:rspec_command = "!bin/rspec --drb {spec}"
 let g:rustfmt_autosave = 1
 
 nnoremap <space> <C-f>
@@ -78,6 +88,7 @@ autocmd Filetype scss setlocal softtabstop=2 sw=2 ts=2
 autocmd Filetype yaml setlocal softtabstop=2 sw=2 ts=2
 autocmd BufRead,BufNewFile Gemfile setlocal filetype=ruby
 
+set backspace=indent,eol,start
 set history=10000
 set hlsearch incsearch
 set ignorecase smartcase
