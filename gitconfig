@@ -9,8 +9,11 @@
 	al = add .
 	co = checkout
 	st = status
+	sth = stash
 	br = branch
 	ci = commit
+    pl = pull
+    ps = push origin HEAD
 	df = diff
 	la = log -1
 	lg = log
@@ -19,7 +22,9 @@
 	# copied from http://qiita.com/peccul/items/90dd469e2f72babbc106
 	graph = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'
 	last = log -1
+	sthp = stash pop
 	com = checkout master
+	cos = checkout staging
 	std = diff --staged
 	unstage = reset HEAD --
 [push]
