@@ -1,16 +1,20 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR FZF_DEFAULT_OPTS:\x2d\x2dheight\x2040\x25
+SETUVAR FZF_DISABLE_KEYBINDINGS:0
 SETUVAR --export FZF_LEGACY_KEYBINDINGS:0
 SETUVAR FZF_PREVIEW_DIR_CMD:ls
 SETUVAR FZF_PREVIEW_FILE_CMD:head\x20\x2dn\x2010
 SETUVAR FZF_TMUX_HEIGHT:40\x25
 SETUVAR --export LSCOLORS:gxfxbEaEBxxEhEhBaDaCaD
-SETUVAR __fish_initialized:3100
+SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_be:bundle\x20exec
 SETUVAR _fish_abbr_dc:docker\x2dcompose
 SETUVAR _fish_abbr_g:git
 SETUVAR _fish_abbr_v:vim
+SETUVAR _fisher_jethrokuan_2F_fzf_files:/Users/pin/\x2econfig/fish/functions/__fzf_cd\x2efish\x1e/Users/pin/\x2econfig/fish/functions/__fzf_complete\x2efish\x1e/Users/pin/\x2econfig/fish/functions/__fzf_complete_preview\x2efish\x1e/Users/pin/\x2econfig/fish/functions/__fzf_find_file\x2efish\x1e/Users/pin/\x2econfig/fish/functions/__fzf_get_dir\x2efish\x1e/Users/pin/\x2econfig/fish/functions/__fzf_open\x2efish\x1e/Users/pin/\x2econfig/fish/functions/__fzf_parse_commandline\x2efish\x1e/Users/pin/\x2econfig/fish/functions/__fzf_reverse_isearch\x2efish\x1e/Users/pin/\x2econfig/fish/functions/__fzfcmd\x2efish\x1e/Users/pin/\x2econfig/fish/conf\x2ed/fzf\x2efish
+SETUVAR _fisher_jorgebucaran_2F_fisher_files:/Users/pin/\x2econfig/fish/functions/fisher\x2efish\x1e/Users/pin/\x2econfig/fish/completions/fisher\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ejethrokuan/fzf
 SETUVAR fish_color_autosuggestion:A0A0F0
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:F4F4F4
@@ -40,4 +44,5 @@ SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
-SETUVAR --export fish_user_paths:/usr/local/bin\x1e/Users/horiesatoru/\x2erbenv/bin
+SETUVAR fish_pager_color_selected_background:\x2dr
+SETUVAR --export fish_user_paths:/opt/homebrew/opt/openssl\x401\x2e1/bin\x1e/usr/local/bin\x1e/Users/horiesatoru/\x2erbenv/bin
