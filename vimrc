@@ -2,21 +2,17 @@ set nocompatible
 
 " Install plug: curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin('~/.vim/plugged')
+  " Install pynvim: pip3 install --user pynvim
+  "Plug 'Shougo/deoplete.nvim' | Plug 'roxma/nvim-yarp' | Plug 'roxma/vim-hug-neovim-rpc'
+  "Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
   Plug 'bronson/vim-trailing-whitespace'
   Plug 'scrooloose/nerdtree'
   Plug 'nanotech/jellybeans.vim'
   Plug 'tpope/vim-fugitive'
   Plug 'vim-scripts/AnsiEsc.vim'
   Plug 'thinca/vim-quickrun'
-  Plug 'SirVer/ultisnips'
-  Plug 'zxqfl/tabnine-vim'
-  Plug 'szw/vim-tags'
-  Plug 'rizzatti/dash.vim'
+  Plug 'madox2/vim-ai'
 
-  " Vim
-  Plug 'honza/vim-snippets'
-  " Fish
-  Plug 'dag/vim-fish'
   " C
   Plug 'vim-scripts/a.vim'
   " Elixir
@@ -31,17 +27,21 @@ call plug#begin('~/.vim/plugged')
   Plug 'mdempsky/gocode', {'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
   " HTML/CSS
   Plug 'mattn/emmet-vim'
-  " JS
-  Plug 'pangloss/vim-javascript'
-  Plug 'maxmellon/vim-jsx-pretty'
   " Ruby
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-rails'
-  Plug 'thoughtbot/vim-rspec'
   Plug 'slim-template/vim-slim'
+  "Plug 'ruby-formatter/rufo-vim'
   " Rust
   Plug 'rust-lang/rust.vim'
 call plug#end()
+
+let g:vim_ai_chat = {
+\  "options": {
+\    "model": "gpt-4-turbo-preview",
+\    "temperature": 0,
+\  },
+\}
 
 colorscheme jellybeans
 
@@ -62,14 +62,17 @@ cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-m> <Cr>
 
+imap <C-L> <Plug>(copilot-accept-word)
+imap <C-J> <Plug>(copilot-accept-line)
+"imap <C-N> <Plug>(copilot-next)
+"imap <C-P> <Plug>(copilot-previous)
+
 let g:go_fmt_command = "goimports"
-let g:UltiSnipsExpandTrigger="<Tab>"
+let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
 let g:UltiSnipsJumpBackwardTrigger="<c-h>"
-let g:UltiSnipsEditSplit="vertical"
-let g:deoplete#enable_at_startup = 1
+"let g:deoplete#enable_at_startup = 1
 let g:rufo_auto_formatting = 1
-let g:rspec_command = "!bin/rspec --drb {spec}"
 let g:rustfmt_autosave = 1
 
 nnoremap <space> <C-f>
@@ -88,7 +91,6 @@ autocmd Filetype scss setlocal softtabstop=2 sw=2 ts=2
 autocmd Filetype yaml setlocal softtabstop=2 sw=2 ts=2
 autocmd BufRead,BufNewFile Gemfile setlocal filetype=ruby
 
-set backspace=indent,eol,start
 set history=10000
 set hlsearch incsearch
 set ignorecase smartcase
@@ -106,3 +108,4 @@ set listchars=eol:¬,tab:▸▸
 set clipboard=unnamedplus,unnamed
 set spelllang=en,cjk
 set completeopt=menu,preview
+set backspace=indent,eol,start
