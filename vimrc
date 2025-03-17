@@ -2,16 +2,12 @@ set nocompatible
 
 " Install plug: curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin('~/.vim/plugged')
-  " Install pynvim: pip3 install --user pynvim
-  "Plug 'Shougo/deoplete.nvim' | Plug 'roxma/nvim-yarp' | Plug 'roxma/vim-hug-neovim-rpc'
-  "Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
   Plug 'bronson/vim-trailing-whitespace'
   Plug 'scrooloose/nerdtree'
   Plug 'nanotech/jellybeans.vim'
   Plug 'tpope/vim-fugitive'
   Plug 'vim-scripts/AnsiEsc.vim'
   Plug 'thinca/vim-quickrun'
-  Plug 'madox2/vim-ai'
 
   " C
   Plug 'vim-scripts/a.vim'
@@ -31,17 +27,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-rails'
   Plug 'slim-template/vim-slim'
-  "Plug 'ruby-formatter/rufo-vim'
   " Rust
   Plug 'rust-lang/rust.vim'
 call plug#end()
-
-let g:vim_ai_chat = {
-\  "options": {
-\    "model": "gpt-4-turbo-preview",
-\    "temperature": 0,
-\  },
-\}
 
 colorscheme jellybeans
 
@@ -62,17 +50,10 @@ cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-m> <Cr>
 
-imap <C-L> <Plug>(copilot-accept-word)
-imap <C-J> <Plug>(copilot-accept-line)
-"imap <C-N> <Plug>(copilot-next)
-"imap <C-P> <Plug>(copilot-previous)
-
 let g:go_fmt_command = "goimports"
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
 let g:UltiSnipsJumpBackwardTrigger="<c-h>"
-"let g:deoplete#enable_at_startup = 1
-let g:rufo_auto_formatting = 1
 let g:rustfmt_autosave = 1
 
 nnoremap <space> <C-f>
